@@ -70,7 +70,7 @@ reviewSchema.statics.calcAverageRatings = async function (tourId) {    // it is 
             }
         }
     ]);
-    console.log(stats);
+    // console.log(stats);
 
     if (stats.length > 0) {
         await Tour.findByIdAndUpdate(tourId, {
@@ -102,7 +102,7 @@ reviewSchema.pre(/^findOneAnd/, async function (next) {
     // with the help of 'this.r' we are passing data from pre to post middleware below
     // this points to the query 
     this.r = await this.findOne();    // by this line with the help of query we get access to document       
-    console.log(this.r);
+    // console.log(this.r);
     next();
 
 });

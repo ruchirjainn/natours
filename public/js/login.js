@@ -5,14 +5,14 @@ const login = async (email, password) => {
     try {
         const res = await axios({
             method: 'POST',
-            url: 'http://127.0.0.1:3000/api/v1/users/login',
+            url: '/api/v1/users/login',
             data: {     // variables name is same that is in postman login body
                 email: email,
                 password: password,
             }
         });
 
-        console.log(res);
+        // console.log(res);
 
         if (res.data.status === 'success') {
             showAlert('success', 'Logged in Successfully');
@@ -50,11 +50,12 @@ if (loginBtn && !loginBtn.hasListener) {
 const logOutBtn = document.querySelector('.nav__el--logout');
 
 const logout = async () => {
-    console.log('hello');
+    
     try {
         const res = await axios({
             method: 'GET',
-            url: 'http://127.0.0.1:3000/api/v1/users/logout'
+            url: '/api/v1/users/logout'
+            // http://127.0.0.1:3000
         });
 
         if ((res.data.status === 'success')) location.reload(true);

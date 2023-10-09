@@ -8,7 +8,7 @@ const updateSettings = async (data, type) => {
 
     try {
 
-        const url = type === 'password' ? 'http://127.0.0.1:3000/api/v1/users/updateMyPassword' : 'http://127.0.0.1:3000/api/v1/users/updateMe';
+        const url = type === 'password' ? '/api/v1/users/updateMyPassword' : '/api/v1/users/updateMe';
 
         const res = await axios({
             method: 'PATCH',
@@ -16,7 +16,7 @@ const updateSettings = async (data, type) => {
             data: data
         });
 
-        console.log(res);
+        // console.log(res);
 
         if (res.data.status === 'success') {
             showAlert('success', `${type.toUpperCase()} Data Updated Successfully!`);
@@ -27,8 +27,6 @@ const updateSettings = async (data, type) => {
     }
 }
 
-
-console.log(userDataForm);
 
 if (userDataForm) {
     userDataForm.addEventListener('submit', (e) => {
@@ -43,8 +41,6 @@ if (userDataForm) {
     });
 }
 
-
-console.log(userPasswordForm);
 
 if (userPasswordForm) {
     userPasswordForm.addEventListener('submit', async e => {
