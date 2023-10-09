@@ -1,0 +1,44 @@
+doctype html
+html 
+    head 
+        block head
+            meta(charset='UTF-8')
+            meta(name='viewport' content='width=device-width, initial-scale=1.0')
+            //- meta(http-equiv="Content-Security-Policy" content="font-src \'self\' fonts.googleapis.com fonts.gstatic.com")            
+            link(rel='stylesheet' href='/css/style.css')
+            link(rel='shortcut icon' type='image/png' href='/img/favicon.png')
+            link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
+            title Natours | #{title}
+            //- script(src="https://unpkg.com/axios/dist/axios.min.js")
+            //- script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js")
+
+    body 
+        // HEADER
+        // header is child template
+        include _header.pug   
+
+        // CONTENT
+        block content 
+            h1 This is a placeholder heading
+
+        // FOOTER
+        include _footer.pug
+
+        script(src='https://js.stripe.com/v3/') 
+        script(src='/js/mapbox.js')
+        script(src='/js/stripe.js' type='module')
+        script(src='https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js')
+        script(src='/js/login.js' type='module')
+        script(src='/js/updateSetting.js' type='module')
+        //- script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js')
+        //- script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js')
+        //- script(src='/js/bundled/index.js' type="module" )
+        //- script(src='<copylinkhere>' integrity='sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=' crossorigin='')
+
+
+
+
+
+
+
+
